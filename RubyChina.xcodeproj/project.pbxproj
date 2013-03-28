@@ -7,6 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		552DFCCD16FC812500B5F49F /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFCCC16FC812500B5F49F /* background@2x.png */; };
+		552DFCCF16FC820A00B5F49F /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFCCE16FC820A00B5F49F /* button@2x.png */; };
+		552DFCD116FC9CDB00B5F49F /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFCD016FC9CDB00B5F49F /* logo@2x.png */; };
+		552DFCD716FCA13300B5F49F /* ruby-logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFCD616FCA13300B5F49F /* ruby-logo@2x.png */; };
+		552DFCD916FD58BE00B5F49F /* new_message@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFCD816FD58BE00B5F49F /* new_message@2x.png */; };
+		552DFCDB16FD5B0000B5F49F /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFCDA16FD5B0000B5F49F /* navbar@2x.png */; };
+		552DFCDE16FDBA9500B5F49F /* NSDate+TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 552DFCDD16FDBA9500B5F49F /* NSDate+TimeAgo.m */; };
+		552DFCE016FDC5CD00B5F49F /* timeago@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFCDF16FDC5CD00B5F49F /* timeago@2x.png */; };
+		552DFCE316FE045700B5F49F /* TopicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 552DFCE216FE045700B5F49F /* TopicController.m */; };
+		552DFCE916FF20C300B5F49F /* ReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 552DFCE816FF20C300B5F49F /* ReplyCell.m */; };
+		552DFCEC16FF5D6D00B5F49F /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 552DFCEB16FF5D6D00B5F49F /* TopicCell.m */; };
+		552DFCEE1700054800B5F49F /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFCED1700054800B5F49F /* back@2x.png */; };
+		552DFD2E1700246800B5F49F /* NodesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 552DFD2D1700246700B5F49F /* NodesController.m */; };
+		552DFD31170024AD00B5F49F /* UsersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 552DFD30170024AC00B5F49F /* UsersController.m */; };
+		552DFD34170024C900B5F49F /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 552DFD33170024C800B5F49F /* AboutController.m */; };
+		552DFD361700373E00B5F49F /* tab1.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFD351700373E00B5F49F /* tab1.png */; };
+		552DFD3B1700393A00B5F49F /* tab2.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFD371700393A00B5F49F /* tab2.png */; };
+		552DFD3D1700393A00B5F49F /* tab3.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFD391700393A00B5F49F /* tab3.png */; };
+		552DFD3E1700393A00B5F49F /* tab4.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFD3A1700393A00B5F49F /* tab4.png */; };
+		552DFD4017015B1E00B5F49F /* deep.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFD3F17015B1E00B5F49F /* deep.png */; };
+		552DFD4217015CD300B5F49F /* shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFD4117015CD300B5F49F /* shadow@2x.png */; };
+		552DFD471701977500B5F49F /* MessageEntryBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFD431701977500B5F49F /* MessageEntryBackground@2x.png */; };
+		552DFD481701977500B5F49F /* MessageEntryInputField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFD441701977500B5F49F /* MessageEntryInputField@2x.png */; };
+		552DFD491701977500B5F49F /* MessageEntrySendButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFD451701977500B5F49F /* MessageEntrySendButton@2x.png */; };
+		552DFD4A1701977500B5F49F /* MessageEntrySendButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFD461701977500B5F49F /* MessageEntrySendButtonPressed@2x.png */; };
+		552DFD511703236200B5F49F /* NewTopicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 552DFD501703236100B5F49F /* NewTopicController.m */; };
+		552DFD54170408E700B5F49F /* NSString+IsEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 552DFD53170408E700B5F49F /* NSString+IsEmpty.m */; };
 		55D49D7816FB15E2006DA6D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D49D7716FB15E2006DA6D2 /* UIKit.framework */; };
 		55D49D7A16FB15E2006DA6D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D49D7916FB15E2006DA6D2 /* Foundation.framework */; };
 		55D49D7C16FB15E2006DA6D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D49D7B16FB15E2006DA6D2 /* CoreGraphics.framework */; };
@@ -16,9 +43,60 @@
 		55D49D8A16FB15E2006DA6D2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D49D8916FB15E2006DA6D2 /* Default.png */; };
 		55D49D8C16FB15E2006DA6D2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D49D8B16FB15E2006DA6D2 /* Default@2x.png */; };
 		55D49D8E16FB15E2006DA6D2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D49D8D16FB15E2006DA6D2 /* Default-568h@2x.png */; };
+		55D49DA116FB2575006DA6D2 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D49D9A16FB2575006DA6D2 /* Node.m */; };
+		55D49DA216FB2575006DA6D2 /* Reply.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D49D9C16FB2575006DA6D2 /* Reply.m */; };
+		55D49DA316FB2575006DA6D2 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D49D9E16FB2575006DA6D2 /* Topic.m */; };
+		55D49DA416FB2575006DA6D2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D49DA016FB2575006DA6D2 /* User.m */; };
+		55D49DA716FB2871006DA6D2 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D49DA616FB2871006DA6D2 /* Preferences.m */; };
+		55D49DAA16FB2D69006DA6D2 /* RemoteEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D49DA916FB2D68006DA6D2 /* RemoteEngine.m */; };
+		55D49DAE16FC51BC006DA6D2 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D49DAD16FC51BC006DA6D2 /* NSData+Base64.m */; };
+		55D49DB216FC56A2006DA6D2 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D49DB116FC56A2006DA6D2 /* LoginController.m */; };
+		55D49DB516FC6116006DA6D2 /* login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D49DB416FC6116006DA6D2 /* login@2x.png */; };
+		55D49DB816FC6B90006DA6D2 /* TopicsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D49DB716FC6B90006DA6D2 /* TopicsController.m */; };
+		55D49DBB16FC6DBA006DA6D2 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D49DB916FC6DB9006DA6D2 /* Icon.png */; };
+		55D49DBC16FC6DBA006DA6D2 /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D49DBA16FC6DBA006DA6D2 /* Icon-114.png */; };
+		B6F45A8B63B74DBAB3D022FA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F51D527298F4DBA89882A6B /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F51D527298F4DBA89882A6B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E05BFD7A92F4A9F81E45CDC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		552DFCCC16FC812500B5F49F /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background@2x.png"; path = "Resources/background@2x.png"; sourceTree = "<group>"; };
+		552DFCCE16FC820A00B5F49F /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button@2x.png"; path = "Resources/button@2x.png"; sourceTree = "<group>"; };
+		552DFCD016FC9CDB00B5F49F /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo@2x.png"; path = "Resources/logo@2x.png"; sourceTree = "<group>"; };
+		552DFCD616FCA13300B5F49F /* ruby-logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ruby-logo@2x.png"; path = "Resources/ruby-logo@2x.png"; sourceTree = "<group>"; };
+		552DFCD816FD58BE00B5F49F /* new_message@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "new_message@2x.png"; path = "Resources/new_message@2x.png"; sourceTree = "<group>"; };
+		552DFCDA16FD5B0000B5F49F /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navbar@2x.png"; path = "Resources/navbar@2x.png"; sourceTree = "<group>"; };
+		552DFCDC16FDBA9500B5F49F /* NSDate+TimeAgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeAgo.h"; sourceTree = "<group>"; };
+		552DFCDD16FDBA9500B5F49F /* NSDate+TimeAgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeAgo.m"; sourceTree = "<group>"; };
+		552DFCDF16FDC5CD00B5F49F /* timeago@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "timeago@2x.png"; path = "Resources/timeago@2x.png"; sourceTree = "<group>"; };
+		552DFCE116FE045700B5F49F /* TopicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicController.h; sourceTree = "<group>"; };
+		552DFCE216FE045700B5F49F /* TopicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicController.m; sourceTree = "<group>"; };
+		552DFCE716FF20C300B5F49F /* ReplyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplyCell.h; sourceTree = "<group>"; };
+		552DFCE816FF20C300B5F49F /* ReplyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplyCell.m; sourceTree = "<group>"; };
+		552DFCEA16FF5D6C00B5F49F /* TopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicCell.h; sourceTree = "<group>"; };
+		552DFCEB16FF5D6D00B5F49F /* TopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicCell.m; sourceTree = "<group>"; };
+		552DFCED1700054800B5F49F /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "back@2x.png"; path = "Resources/back@2x.png"; sourceTree = "<group>"; };
+		552DFD2C1700246600B5F49F /* NodesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodesController.h; sourceTree = "<group>"; };
+		552DFD2D1700246700B5F49F /* NodesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodesController.m; sourceTree = "<group>"; };
+		552DFD2F170024AC00B5F49F /* UsersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersController.h; sourceTree = "<group>"; };
+		552DFD30170024AC00B5F49F /* UsersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersController.m; sourceTree = "<group>"; };
+		552DFD32170024C800B5F49F /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutController.h; sourceTree = "<group>"; };
+		552DFD33170024C800B5F49F /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutController.m; sourceTree = "<group>"; };
+		552DFD351700373E00B5F49F /* tab1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab1.png; path = Resources/tab1.png; sourceTree = "<group>"; };
+		552DFD371700393A00B5F49F /* tab2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab2.png; path = Resources/tab2.png; sourceTree = "<group>"; };
+		552DFD391700393A00B5F49F /* tab3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab3.png; path = Resources/tab3.png; sourceTree = "<group>"; };
+		552DFD3A1700393A00B5F49F /* tab4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab4.png; path = Resources/tab4.png; sourceTree = "<group>"; };
+		552DFD3F17015B1E00B5F49F /* deep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = deep.png; path = Resources/deep.png; sourceTree = "<group>"; };
+		552DFD4117015CD300B5F49F /* shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shadow@2x.png"; path = "Resources/shadow@2x.png"; sourceTree = "<group>"; };
+		552DFD431701977500B5F49F /* MessageEntryBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MessageEntryBackground@2x.png"; path = "Resources/MessageEntryBackground@2x.png"; sourceTree = "<group>"; };
+		552DFD441701977500B5F49F /* MessageEntryInputField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MessageEntryInputField@2x.png"; path = "Resources/MessageEntryInputField@2x.png"; sourceTree = "<group>"; };
+		552DFD451701977500B5F49F /* MessageEntrySendButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MessageEntrySendButton@2x.png"; path = "Resources/MessageEntrySendButton@2x.png"; sourceTree = "<group>"; };
+		552DFD461701977500B5F49F /* MessageEntrySendButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MessageEntrySendButtonPressed@2x.png"; path = "Resources/MessageEntrySendButtonPressed@2x.png"; sourceTree = "<group>"; };
+		552DFD4F1703235F00B5F49F /* NewTopicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTopicController.h; sourceTree = "<group>"; };
+		552DFD501703236100B5F49F /* NewTopicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTopicController.m; sourceTree = "<group>"; };
+		552DFD52170408E700B5F49F /* NSString+IsEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IsEmpty.h"; sourceTree = "<group>"; };
+		552DFD53170408E700B5F49F /* NSString+IsEmpty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IsEmpty.m"; sourceTree = "<group>"; };
 		55D49D7416FB15E2006DA6D2 /* RubyChina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubyChina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D49D7716FB15E2006DA6D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		55D49D7916FB15E2006DA6D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -32,6 +110,27 @@
 		55D49D8916FB15E2006DA6D2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		55D49D8B16FB15E2006DA6D2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		55D49D8D16FB15E2006DA6D2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		55D49D9916FB2575006DA6D2 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Node.h; path = Models/Node.h; sourceTree = "<group>"; };
+		55D49D9A16FB2575006DA6D2 /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Node.m; path = Models/Node.m; sourceTree = "<group>"; };
+		55D49D9B16FB2575006DA6D2 /* Reply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reply.h; path = Models/Reply.h; sourceTree = "<group>"; };
+		55D49D9C16FB2575006DA6D2 /* Reply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reply.m; path = Models/Reply.m; sourceTree = "<group>"; };
+		55D49D9D16FB2575006DA6D2 /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Topic.h; path = Models/Topic.h; sourceTree = "<group>"; };
+		55D49D9E16FB2575006DA6D2 /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Topic.m; path = Models/Topic.m; sourceTree = "<group>"; };
+		55D49D9F16FB2575006DA6D2 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Models/User.h; sourceTree = "<group>"; };
+		55D49DA016FB2575006DA6D2 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Models/User.m; sourceTree = "<group>"; };
+		55D49DA516FB2870006DA6D2 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
+		55D49DA616FB2871006DA6D2 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
+		55D49DA816FB2D68006DA6D2 /* RemoteEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteEngine.h; sourceTree = "<group>"; };
+		55D49DA916FB2D68006DA6D2 /* RemoteEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteEngine.m; sourceTree = "<group>"; };
+		55D49DAC16FC51BC006DA6D2 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		55D49DAD16FC51BC006DA6D2 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		55D49DB016FC56A2006DA6D2 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		55D49DB116FC56A2006DA6D2 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
+		55D49DB416FC6116006DA6D2 /* login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login@2x.png"; sourceTree = "<group>"; };
+		55D49DB616FC6B90006DA6D2 /* TopicsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicsController.h; sourceTree = "<group>"; };
+		55D49DB716FC6B90006DA6D2 /* TopicsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicsController.m; sourceTree = "<group>"; };
+		55D49DB916FC6DB9006DA6D2 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		55D49DBA16FC6DBA006DA6D2 /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-114.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +141,7 @@
 				55D49D7816FB15E2006DA6D2 /* UIKit.framework in Frameworks */,
 				55D49D7A16FB15E2006DA6D2 /* Foundation.framework in Frameworks */,
 				55D49D7C16FB15E2006DA6D2 /* CoreGraphics.framework in Frameworks */,
+				B6F45A8B63B74DBAB3D022FA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +154,7 @@
 				55D49D7D16FB15E2006DA6D2 /* RubyChina */,
 				55D49D7616FB15E2006DA6D2 /* Frameworks */,
 				55D49D7516FB15E2006DA6D2 /* Products */,
+				4E05BFD7A92F4A9F81E45CDC /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +172,7 @@
 				55D49D7716FB15E2006DA6D2 /* UIKit.framework */,
 				55D49D7916FB15E2006DA6D2 /* Foundation.framework */,
 				55D49D7B16FB15E2006DA6D2 /* CoreGraphics.framework */,
+				1F51D527298F4DBA89882A6B /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -78,9 +180,15 @@
 		55D49D7D16FB15E2006DA6D2 /* RubyChina */ = {
 			isa = PBXGroup;
 			children = (
+				55D49DB316FC60F6006DA6D2 /* Resources */,
+				55D49DAF16FC565D006DA6D2 /* Controllers */,
+				55D49DAB16FC518D006DA6D2 /* Categories */,
+				55D49D9816FB254B006DA6D2 /* Models */,
 				55D49D8616FB15E2006DA6D2 /* AppDelegate.h */,
 				55D49D8716FB15E2006DA6D2 /* AppDelegate.m */,
 				55D49D7E16FB15E2006DA6D2 /* Supporting Files */,
+				55D49DA816FB2D68006DA6D2 /* RemoteEngine.h */,
+				55D49DA916FB2D68006DA6D2 /* RemoteEngine.m */,
 			);
 			path = RubyChina;
 			sourceTree = "<group>";
@@ -99,6 +207,89 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		55D49D9816FB254B006DA6D2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				55D49D9916FB2575006DA6D2 /* Node.h */,
+				55D49D9A16FB2575006DA6D2 /* Node.m */,
+				55D49D9B16FB2575006DA6D2 /* Reply.h */,
+				55D49D9C16FB2575006DA6D2 /* Reply.m */,
+				55D49D9D16FB2575006DA6D2 /* Topic.h */,
+				55D49D9E16FB2575006DA6D2 /* Topic.m */,
+				55D49D9F16FB2575006DA6D2 /* User.h */,
+				55D49DA016FB2575006DA6D2 /* User.m */,
+				55D49DA516FB2870006DA6D2 /* Preferences.h */,
+				55D49DA616FB2871006DA6D2 /* Preferences.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		55D49DAB16FC518D006DA6D2 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				55D49DAC16FC51BC006DA6D2 /* NSData+Base64.h */,
+				55D49DAD16FC51BC006DA6D2 /* NSData+Base64.m */,
+				552DFCDC16FDBA9500B5F49F /* NSDate+TimeAgo.h */,
+				552DFCDD16FDBA9500B5F49F /* NSDate+TimeAgo.m */,
+				552DFD52170408E700B5F49F /* NSString+IsEmpty.h */,
+				552DFD53170408E700B5F49F /* NSString+IsEmpty.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		55D49DAF16FC565D006DA6D2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				55D49DB016FC56A2006DA6D2 /* LoginController.h */,
+				55D49DB116FC56A2006DA6D2 /* LoginController.m */,
+				55D49DB616FC6B90006DA6D2 /* TopicsController.h */,
+				55D49DB716FC6B90006DA6D2 /* TopicsController.m */,
+				552DFCE116FE045700B5F49F /* TopicController.h */,
+				552DFCE216FE045700B5F49F /* TopicController.m */,
+				552DFCE716FF20C300B5F49F /* ReplyCell.h */,
+				552DFCE816FF20C300B5F49F /* ReplyCell.m */,
+				552DFCEA16FF5D6C00B5F49F /* TopicCell.h */,
+				552DFCEB16FF5D6D00B5F49F /* TopicCell.m */,
+				552DFD2C1700246600B5F49F /* NodesController.h */,
+				552DFD2D1700246700B5F49F /* NodesController.m */,
+				552DFD2F170024AC00B5F49F /* UsersController.h */,
+				552DFD30170024AC00B5F49F /* UsersController.m */,
+				552DFD32170024C800B5F49F /* AboutController.h */,
+				552DFD33170024C800B5F49F /* AboutController.m */,
+				552DFD4F1703235F00B5F49F /* NewTopicController.h */,
+				552DFD501703236100B5F49F /* NewTopicController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		55D49DB316FC60F6006DA6D2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				552DFD431701977500B5F49F /* MessageEntryBackground@2x.png */,
+				552DFD441701977500B5F49F /* MessageEntryInputField@2x.png */,
+				552DFD451701977500B5F49F /* MessageEntrySendButton@2x.png */,
+				552DFD461701977500B5F49F /* MessageEntrySendButtonPressed@2x.png */,
+				552DFD4117015CD300B5F49F /* shadow@2x.png */,
+				552DFD3F17015B1E00B5F49F /* deep.png */,
+				552DFD371700393A00B5F49F /* tab2.png */,
+				552DFD391700393A00B5F49F /* tab3.png */,
+				552DFD3A1700393A00B5F49F /* tab4.png */,
+				552DFD351700373E00B5F49F /* tab1.png */,
+				552DFCED1700054800B5F49F /* back@2x.png */,
+				552DFCDF16FDC5CD00B5F49F /* timeago@2x.png */,
+				552DFCDA16FD5B0000B5F49F /* navbar@2x.png */,
+				552DFCD816FD58BE00B5F49F /* new_message@2x.png */,
+				552DFCD616FCA13300B5F49F /* ruby-logo@2x.png */,
+				552DFCD016FC9CDB00B5F49F /* logo@2x.png */,
+				552DFCCE16FC820A00B5F49F /* button@2x.png */,
+				552DFCCC16FC812500B5F49F /* background@2x.png */,
+				55D49DB916FC6DB9006DA6D2 /* Icon.png */,
+				55D49DBA16FC6DBA006DA6D2 /* Icon-114.png */,
+				55D49DB416FC6116006DA6D2 /* login@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,6 +300,7 @@
 				55D49D7016FB15E2006DA6D2 /* Sources */,
 				55D49D7116FB15E2006DA6D2 /* Frameworks */,
 				55D49D7216FB15E2006DA6D2 /* Resources */,
+				0B7A01B9C4B24974BB9C0D01 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -154,10 +346,48 @@
 				55D49D8A16FB15E2006DA6D2 /* Default.png in Resources */,
 				55D49D8C16FB15E2006DA6D2 /* Default@2x.png in Resources */,
 				55D49D8E16FB15E2006DA6D2 /* Default-568h@2x.png in Resources */,
+				55D49DB516FC6116006DA6D2 /* login@2x.png in Resources */,
+				55D49DBB16FC6DBA006DA6D2 /* Icon.png in Resources */,
+				55D49DBC16FC6DBA006DA6D2 /* Icon-114.png in Resources */,
+				552DFCCD16FC812500B5F49F /* background@2x.png in Resources */,
+				552DFCCF16FC820A00B5F49F /* button@2x.png in Resources */,
+				552DFCD116FC9CDB00B5F49F /* logo@2x.png in Resources */,
+				552DFCD716FCA13300B5F49F /* ruby-logo@2x.png in Resources */,
+				552DFCD916FD58BE00B5F49F /* new_message@2x.png in Resources */,
+				552DFCDB16FD5B0000B5F49F /* navbar@2x.png in Resources */,
+				552DFCE016FDC5CD00B5F49F /* timeago@2x.png in Resources */,
+				552DFCEE1700054800B5F49F /* back@2x.png in Resources */,
+				552DFD361700373E00B5F49F /* tab1.png in Resources */,
+				552DFD3B1700393A00B5F49F /* tab2.png in Resources */,
+				552DFD3D1700393A00B5F49F /* tab3.png in Resources */,
+				552DFD3E1700393A00B5F49F /* tab4.png in Resources */,
+				552DFD4017015B1E00B5F49F /* deep.png in Resources */,
+				552DFD4217015CD300B5F49F /* shadow@2x.png in Resources */,
+				552DFD471701977500B5F49F /* MessageEntryBackground@2x.png in Resources */,
+				552DFD481701977500B5F49F /* MessageEntryInputField@2x.png in Resources */,
+				552DFD491701977500B5F49F /* MessageEntrySendButton@2x.png in Resources */,
+				552DFD4A1701977500B5F49F /* MessageEntrySendButtonPressed@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B7A01B9C4B24974BB9C0D01 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		55D49D7016FB15E2006DA6D2 /* Sources */ = {
@@ -166,6 +396,24 @@
 			files = (
 				55D49D8416FB15E2006DA6D2 /* main.m in Sources */,
 				55D49D8816FB15E2006DA6D2 /* AppDelegate.m in Sources */,
+				55D49DA116FB2575006DA6D2 /* Node.m in Sources */,
+				55D49DA216FB2575006DA6D2 /* Reply.m in Sources */,
+				55D49DA316FB2575006DA6D2 /* Topic.m in Sources */,
+				55D49DA416FB2575006DA6D2 /* User.m in Sources */,
+				55D49DA716FB2871006DA6D2 /* Preferences.m in Sources */,
+				55D49DAA16FB2D69006DA6D2 /* RemoteEngine.m in Sources */,
+				55D49DAE16FC51BC006DA6D2 /* NSData+Base64.m in Sources */,
+				55D49DB216FC56A2006DA6D2 /* LoginController.m in Sources */,
+				55D49DB816FC6B90006DA6D2 /* TopicsController.m in Sources */,
+				552DFCDE16FDBA9500B5F49F /* NSDate+TimeAgo.m in Sources */,
+				552DFCE316FE045700B5F49F /* TopicController.m in Sources */,
+				552DFCE916FF20C300B5F49F /* ReplyCell.m in Sources */,
+				552DFCEC16FF5D6D00B5F49F /* TopicCell.m in Sources */,
+				552DFD2E1700246800B5F49F /* NodesController.m in Sources */,
+				552DFD31170024AD00B5F49F /* UsersController.m in Sources */,
+				552DFD34170024C900B5F49F /* AboutController.m in Sources */,
+				552DFD511703236200B5F49F /* NewTopicController.m in Sources */,
+				552DFD54170408E700B5F49F /* NSString+IsEmpty.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,22 +489,26 @@
 		};
 		55D49D9216FB15E2006DA6D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E05BFD7A92F4A9F81E45CDC /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RubyChina/RubyChina-Prefix.pch";
 				INFOPLIST_FILE = "RubyChina/RubyChina-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		55D49D9316FB15E2006DA6D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E05BFD7A92F4A9F81E45CDC /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RubyChina/RubyChina-Prefix.pch";
 				INFOPLIST_FILE = "RubyChina/RubyChina-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -280,6 +532,7 @@
 				55D49D9316FB15E2006DA6D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

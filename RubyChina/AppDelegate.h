@@ -7,9 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RemoteEngine.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#define ApplicationDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate,UITabBarControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (strong, nonatomic) RemoteEngine *remoteEngine;
+@property (strong, nonatomic) UINavigationController *navController;
+
+@property (strong, nonatomic) UITabBarController *tabBarController;
 
 @end

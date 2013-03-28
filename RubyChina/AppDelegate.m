@@ -7,17 +7,76 @@
 //
 
 #import "AppDelegate.h"
+#import "RemoteEngine.h"
+#import "LoginController.h"
+#import "Preferences.h"
+#import "TopicsController.h"
+#import "NodesController.h"
+#import "UsersController.h"
+#import "AboutController.h"
+#import "NSString+IsEmpty.h"
+
 
 @implementation AppDelegate
 
+@synthesize remoteEngine;
+@synthesize navController;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    self.remoteEngine = [[RemoteEngine alloc] initWithHostName:BaseDomain];
+    [self.remoteEngine useCache];
+    
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar.png"] forBarMetrics:UIBarMetricsDefault];
+    
+    application.statusBarStyle = UIStatusBarStyleBlackOpaque;    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    
+    TopicsController *topicsController = [[TopicsController alloc] init];
+    topicsController.tabBarItem.title = @"社区";
+    topicsController.tabBarItem.image = [UIImage imageNamed:@"tab1.png"];
+    UINavigationController *navController0 = [[UINavigationController alloc] initWithRootViewController:topicsController];
+
+    
+    NodesController *nodesController = [[NodesController alloc] init];
+    UINavigationController *navController1 = [[UINavigationController alloc] initWithRootViewController:nodesController];
+    navController1.tabBarItem.title = @"节点";
+    navController1.tabBarItem.image = [UIImage imageNamed:@"tab2.png"];
+    
+    UsersController *usersController = [[UsersController alloc] init];
+    UINavigationController *navController2 = [[UINavigationController alloc] initWithRootViewController:usersController];
+    navController2.tabBarItem.title = @"用户";
+    navController2.tabBarItem.image = [UIImage imageNamed:@"tab3.png"];
+    
+    AboutController *aboutController = [[AboutController alloc] init];
+    UINavigationController *navController3 = [[UINavigationController alloc] initWithRootViewController:aboutController];
+    navController3.tabBarItem.title = @"关于";
+    navController3.tabBarItem.image = [UIImage imageNamed:@"tab4.png"];
+    
+    self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController.viewControllers = @[navController0, navController1, navController2, navController3];
+    self.window.rootViewController = self.tabBarController;
+    
+    
+    NSString *token = [Preferences privateToken];
+        
+    if (!token && ![token isEmpty])  {
+        LoginController *loginController = [[LoginController alloc] init];
+        [self.tabBarController presentViewController:loginController animated:NO completion:^{
+        }];
+    }
+        
+    
     return YES;
 }
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
