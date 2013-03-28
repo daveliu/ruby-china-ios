@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5515984017048E0400518CC6 /* avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5515983F17048E0400518CC6 /* avatar@2x.png */; };
 		552DFCCD16FC812500B5F49F /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFCCC16FC812500B5F49F /* background@2x.png */; };
 		552DFCCF16FC820A00B5F49F /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFCCE16FC820A00B5F49F /* button@2x.png */; };
 		552DFCD116FC9CDB00B5F49F /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFCD016FC9CDB00B5F49F /* logo@2x.png */; };
@@ -24,7 +25,6 @@
 		552DFD34170024C900B5F49F /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 552DFD33170024C800B5F49F /* AboutController.m */; };
 		552DFD361700373E00B5F49F /* tab1.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFD351700373E00B5F49F /* tab1.png */; };
 		552DFD3B1700393A00B5F49F /* tab2.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFD371700393A00B5F49F /* tab2.png */; };
-		552DFD3D1700393A00B5F49F /* tab3.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFD391700393A00B5F49F /* tab3.png */; };
 		552DFD3E1700393A00B5F49F /* tab4.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFD3A1700393A00B5F49F /* tab4.png */; };
 		552DFD4017015B1E00B5F49F /* deep.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFD3F17015B1E00B5F49F /* deep.png */; };
 		552DFD4217015CD300B5F49F /* shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFD4117015CD300B5F49F /* shadow@2x.png */; };
@@ -34,6 +34,9 @@
 		552DFD4A1701977500B5F49F /* MessageEntrySendButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFD461701977500B5F49F /* MessageEntrySendButtonPressed@2x.png */; };
 		552DFD511703236200B5F49F /* NewTopicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 552DFD501703236100B5F49F /* NewTopicController.m */; };
 		552DFD54170408E700B5F49F /* NSString+IsEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 552DFD53170408E700B5F49F /* NSString+IsEmpty.m */; };
+		552DFD5A1704455100B5F49F /* tab1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFD591704455100B5F49F /* tab1@2x.png */; };
+		552DFD5C170449F500B5F49F /* tab3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFD5B170449F500B5F49F /* tab3@2x.png */; };
+		552DFD5E17044CC900B5F49F /* navbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFD5D17044CC800B5F49F /* navbutton@2x.png */; };
 		55D49D7816FB15E2006DA6D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D49D7716FB15E2006DA6D2 /* UIKit.framework */; };
 		55D49D7A16FB15E2006DA6D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D49D7916FB15E2006DA6D2 /* Foundation.framework */; };
 		55D49D7C16FB15E2006DA6D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D49D7B16FB15E2006DA6D2 /* CoreGraphics.framework */; };
@@ -61,6 +64,7 @@
 /* Begin PBXFileReference section */
 		1F51D527298F4DBA89882A6B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E05BFD7A92F4A9F81E45CDC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		5515983F17048E0400518CC6 /* avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "avatar@2x.png"; path = "Resources/avatar@2x.png"; sourceTree = "<group>"; };
 		552DFCCC16FC812500B5F49F /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background@2x.png"; path = "Resources/background@2x.png"; sourceTree = "<group>"; };
 		552DFCCE16FC820A00B5F49F /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button@2x.png"; path = "Resources/button@2x.png"; sourceTree = "<group>"; };
 		552DFCD016FC9CDB00B5F49F /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo@2x.png"; path = "Resources/logo@2x.png"; sourceTree = "<group>"; };
@@ -85,7 +89,6 @@
 		552DFD33170024C800B5F49F /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutController.m; sourceTree = "<group>"; };
 		552DFD351700373E00B5F49F /* tab1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab1.png; path = Resources/tab1.png; sourceTree = "<group>"; };
 		552DFD371700393A00B5F49F /* tab2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab2.png; path = Resources/tab2.png; sourceTree = "<group>"; };
-		552DFD391700393A00B5F49F /* tab3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab3.png; path = Resources/tab3.png; sourceTree = "<group>"; };
 		552DFD3A1700393A00B5F49F /* tab4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab4.png; path = Resources/tab4.png; sourceTree = "<group>"; };
 		552DFD3F17015B1E00B5F49F /* deep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = deep.png; path = Resources/deep.png; sourceTree = "<group>"; };
 		552DFD4117015CD300B5F49F /* shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shadow@2x.png"; path = "Resources/shadow@2x.png"; sourceTree = "<group>"; };
@@ -97,6 +100,9 @@
 		552DFD501703236100B5F49F /* NewTopicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTopicController.m; sourceTree = "<group>"; };
 		552DFD52170408E700B5F49F /* NSString+IsEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IsEmpty.h"; sourceTree = "<group>"; };
 		552DFD53170408E700B5F49F /* NSString+IsEmpty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IsEmpty.m"; sourceTree = "<group>"; };
+		552DFD591704455100B5F49F /* tab1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tab1@2x.png"; path = "Resources/tab1@2x.png"; sourceTree = "<group>"; };
+		552DFD5B170449F500B5F49F /* tab3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tab3@2x.png"; path = "Resources/tab3@2x.png"; sourceTree = "<group>"; };
+		552DFD5D17044CC800B5F49F /* navbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navbutton@2x.png"; path = "Resources/navbutton@2x.png"; sourceTree = "<group>"; };
 		55D49D7416FB15E2006DA6D2 /* RubyChina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubyChina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D49D7716FB15E2006DA6D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		55D49D7916FB15E2006DA6D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -265,6 +271,10 @@
 		55D49DB316FC60F6006DA6D2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5515983F17048E0400518CC6 /* avatar@2x.png */,
+				552DFD5D17044CC800B5F49F /* navbutton@2x.png */,
+				552DFD5B170449F500B5F49F /* tab3@2x.png */,
+				552DFD591704455100B5F49F /* tab1@2x.png */,
 				552DFD431701977500B5F49F /* MessageEntryBackground@2x.png */,
 				552DFD441701977500B5F49F /* MessageEntryInputField@2x.png */,
 				552DFD451701977500B5F49F /* MessageEntrySendButton@2x.png */,
@@ -272,7 +282,6 @@
 				552DFD4117015CD300B5F49F /* shadow@2x.png */,
 				552DFD3F17015B1E00B5F49F /* deep.png */,
 				552DFD371700393A00B5F49F /* tab2.png */,
-				552DFD391700393A00B5F49F /* tab3.png */,
 				552DFD3A1700393A00B5F49F /* tab4.png */,
 				552DFD351700373E00B5F49F /* tab1.png */,
 				552DFCED1700054800B5F49F /* back@2x.png */,
@@ -359,7 +368,6 @@
 				552DFCEE1700054800B5F49F /* back@2x.png in Resources */,
 				552DFD361700373E00B5F49F /* tab1.png in Resources */,
 				552DFD3B1700393A00B5F49F /* tab2.png in Resources */,
-				552DFD3D1700393A00B5F49F /* tab3.png in Resources */,
 				552DFD3E1700393A00B5F49F /* tab4.png in Resources */,
 				552DFD4017015B1E00B5F49F /* deep.png in Resources */,
 				552DFD4217015CD300B5F49F /* shadow@2x.png in Resources */,
@@ -367,6 +375,10 @@
 				552DFD481701977500B5F49F /* MessageEntryInputField@2x.png in Resources */,
 				552DFD491701977500B5F49F /* MessageEntrySendButton@2x.png in Resources */,
 				552DFD4A1701977500B5F49F /* MessageEntrySendButtonPressed@2x.png in Resources */,
+				552DFD5A1704455100B5F49F /* tab1@2x.png in Resources */,
+				552DFD5C170449F500B5F49F /* tab3@2x.png in Resources */,
+				552DFD5E17044CC900B5F49F /* navbutton@2x.png in Resources */,
+				5515984017048E0400518CC6 /* avatar@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

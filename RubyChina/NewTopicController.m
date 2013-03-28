@@ -59,6 +59,8 @@
         
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消"style:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
+
+    [self.navigationItem.leftBarButtonItem setBackgroundImage:[[UIImage imageNamed:@"navbutton.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(4, 4, 4, 4)] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonSystemItemDone target:self action:@selector(save:)];
     
@@ -76,8 +78,10 @@
     
     [currentOp onCompletion:^(MKNetworkOperation* completedRequest) {
         DLog(@"-------------------------%@", completedRequest);
-        
         [self.navigationController popToRootViewControllerAnimated:YES];
+
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"createTopic" object:nil];
+        
         
     } onError:^(NSError* error) {
         [SVProgressHUD showErrorWithStatus:@"error happen"];

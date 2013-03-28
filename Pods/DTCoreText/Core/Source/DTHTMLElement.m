@@ -8,6 +8,7 @@
 
 #import "DTCoreText.h"
 #import "DTHTMLElement.h"
+#import "DTHTMLElementA.h"
 #import "DTHTMLElementAttachment.h"
 #import "DTHTMLElementBR.h"
 #import "DTHTMLElementHR.h"
@@ -39,6 +40,7 @@ NSDictionary *_classesForNames = nil;
 	// lookup table so that we quickly get the correct class to instantiate for special tags
 	NSMutableDictionary *tmpDict = [[NSMutableDictionary alloc] init];
 	
+	[tmpDict setObject:[DTHTMLElementA class] forKey:@"a"];
 	[tmpDict setObject:[DTHTMLElementBR class] forKey:@"br"];
 	[tmpDict setObject:[DTHTMLElementHR class] forKey:@"hr"];
 	[tmpDict setObject:[DTHTMLElementLI class] forKey:@"li"];
@@ -941,22 +943,12 @@ NSDictionary *_classesForNames = nil;
 	if (widthString && ![widthString isEqualToString:@"auto"])
 	{
 		_size.width = [widthString pixelSizeOfCSSMeasureRelativeToCurrentTextSize:self.fontDescriptor.pointSize textScale:_textScale];
-		
-		// if this has an attachment set its size too
-		CGSize displaySize = _textAttachment.displaySize;
-		displaySize.width = _size.width;
-		_textAttachment.displaySize = displaySize;
 	}
 	
 	NSString *heightString = [styles objectForKey:@"height"];
 	if (heightString && ![heightString isEqualToString:@"auto"])
 	{
 		_size.height = [heightString pixelSizeOfCSSMeasureRelativeToCurrentTextSize:self.fontDescriptor.pointSize textScale:_textScale];
-		
-		// if this has an attachment set its size too
-		CGSize displaySize = _textAttachment.displaySize;
-		displaySize.height = _size.height;
-		_textAttachment.displaySize = displaySize;
 	}
 	
 	NSString *whitespaceString = [styles objectForKey:@"white-space"];
@@ -1092,7 +1084,17 @@ NSDictionary *_classesForNames = nil;
 
 - (DTCSSListStyle *)listStyle
 {
-	return [[DTCSSListStyle alloc] initWithStyles:_styles];
+	DTCSSListStyle *style = [[DTCSSListStyle alloc] initWithStyles:_styles];
+	
+	NSString *startingIndex = [_attributes objectForKey:@"start"];
+	
+	// set the starting index if there is one specified
+	if (startingIndex)
+	{
+		style.startingItemNumber = [startingIndex integerValue];
+	}
+	
+	return style;
 }
 
 - (void)addAdditionalAttribute:(id)attribute forKey:(id)key
@@ -1197,6 +1199,9 @@ NSDictionary *_classesForNames = nil;
 	}
 	
 	_containsAppleConvertedSpace = element.containsAppleConvertedSpace;
+	
+	// we copy the link because we might need for it making the custom view
+	_textAttachment.hyperLinkURL = element.link;
 }
 
 - (void)interpretAttributes

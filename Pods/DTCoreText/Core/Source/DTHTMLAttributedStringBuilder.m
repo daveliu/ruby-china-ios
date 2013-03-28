@@ -101,7 +101,7 @@
 
 - (BOOL)_buildString
 {
-#if DEBUG
+#if DEBUG_LOG_METRICS
 	// metrics: get start time
 	CFAbsoluteTime startTime = CFAbsoluteTimeGetCurrent();
 #endif
@@ -173,7 +173,7 @@
 	
 	
 	// set the default font size
-	CGFloat defaultFontSize = 16.0f;
+	CGFloat defaultFontSize = 18.0f;
 	
 	NSNumber *defaultFontSizeNumber = [_options objectForKey:DTDefaultFontSize];
 	
@@ -223,6 +223,24 @@
 			// remove default decoration
 			[_globalStyleSheet parseStyleBlock:@"a {text-decoration:none;}"];
 		}
+	}
+	
+	DTColor *defaultLinkHighlightColor = [_options objectForKey:DTDefaultLinkHighlightColor];
+	
+	if (defaultLinkHighlightColor)
+	{
+		if ([defaultLinkHighlightColor isKindOfClass:[NSString class]])
+		{
+			// convert from string to color
+			defaultLinkHighlightColor = [DTColor colorWithHTMLName:(NSString *)defaultLinkHighlightColor];
+		}
+		
+		// get hex code for the passed color
+		NSString *colorHex = [defaultLinkHighlightColor htmlHexString];
+		
+		// overwrite the style
+		NSString *styleBlock = [NSString stringWithFormat:@"a:active {color:#%@;}", colorHex];
+		[_globalStyleSheet parseStyleBlock:styleBlock];
 	}
 	
 	// default paragraph style
@@ -297,7 +315,7 @@
 	_tagStartHandlers = nil;
 	_tagEndHandlers = nil;
 
-#if DEBUG
+#if DEBUG_LOG_METRICS
 	// metrics: get end time
 	CFAbsoluteTime endTime = CFAbsoluteTimeGetCurrent();
 	
@@ -731,7 +749,13 @@
 			}
 			
 		}
-		
+
+		while (![_currentTag.name isEqualToString:elementName])
+		{
+			// missing end of element, attempt to recover
+			_currentTag = [_currentTag parentElement];
+		}
+
 		// go back up a level
 		_currentTag = [_currentTag parentElement];
 	});

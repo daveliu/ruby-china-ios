@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Topic.h"
 #import "HPGrowingTextView.h"
+#import <DTCoreText.h>
 
-
-@interface TopicController : UITableViewController <UITableViewDataSource, UITableViewDelegate, HPGrowingTextViewDelegate>{
+@interface TopicController : UITableViewController <UITableViewDataSource, UITableViewDelegate, HPGrowingTextViewDelegate, DTAttributedTextContentViewDelegate>{
 	UIView *containerView;
     HPGrowingTextView *textView;
 }

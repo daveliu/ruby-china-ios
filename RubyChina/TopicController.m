@@ -16,6 +16,8 @@
 #import "Preferences.h"
 
 
+
+
 @interface TopicController ()
 
 @end
@@ -294,6 +296,8 @@ NSString * const AttributedTextTopicCellReuseIdentifier = @"AttributedTextTopicC
     
 	NSAttributedString *string = [[NSAttributedString alloc] initWithHTMLData:data options:options documentAttributes:NULL];
     
+    cell.attributedTextContextView.shouldDrawLinks = NO;
+    cell.attributedTextContextView.delegate = self;
     [cell setAttributedString:string];
 
 }
@@ -327,6 +331,8 @@ NSString * const AttributedTextTopicCellReuseIdentifier = @"AttributedTextTopicC
     
 	NSAttributedString *string = [[NSAttributedString alloc] initWithHTMLData:data options:options documentAttributes:NULL];
     
+    cell.attributedTextContextView.shouldDrawLinks = NO;
+    cell.attributedTextContextView.delegate = self;
     [cell setAttributedString:string];
     [cell setTopic:self.topic];
     
@@ -475,7 +481,6 @@ NSString * const AttributedTextTopicCellReuseIdentifier = @"AttributedTextTopicC
 -(void)resignTextViewSwip:(UIGestureRecognizer *)recognizer
 {
 //    UISwipeGestureRecognizerDirectionDown
-    NSLog(@"xxxfdsfsdfsdfsdfsdfsdfsdfsd");
 	[textView resignFirstResponder];
 }
 
@@ -547,6 +552,51 @@ NSString * const AttributedTextTopicCellReuseIdentifier = @"AttributedTextTopicC
 //-(void)growingTextView:(HPGrowingTextView *)growingTextView didChangeHeight:(float)height{
 //    textView.animateHeightChange = false;
 //}
+
+
+#pragma DT delegate mark Actions
+
+- (UIView *)attributedTextContentView:(DTAttributedTextContentView *)attributedTextContentView viewForAttributedString:(NSAttributedString *)string frame:(CGRect)frame
+{
+	NSDictionary *attributes = [string attributesAtIndex:0 effectiveRange:NULL];
+    
+	NSURL *URL = [attributes objectForKey:DTLinkAttribute];
+	NSString *identifier = [attributes objectForKey:DTGUIDAttribute];
+    
+    
+	DTLinkButton *button = [[DTLinkButton alloc] initWithFrame:frame];
+	button.URL = URL;
+	button.minimumHitSize = CGSizeMake(25, 25); // adjusts it's bounds so that button is always large enough
+	button.GUID = identifier;
+    
+	// get image with normal link text
+	UIImage *normalImage = [attributedTextContentView contentImageWithBounds:frame options:DTCoreTextLayoutFrameDrawingDefault];
+	[button setImage:normalImage forState:UIControlStateNormal];
+    
+	// get image for highlighted link text
+	UIImage *highlightImage = [attributedTextContentView contentImageWithBounds:frame options:DTCoreTextLayoutFrameDrawingDrawLinksHighlighted];
+	[button setImage:highlightImage forState:UIControlStateHighlighted];
+    
+	// use normal push action for opening URL
+	[button addTarget:self action:@selector(linkPushed:) forControlEvents:UIControlEventTouchUpInside];
+    
+	// demonstrate combination with long press
+	UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(linkLongPressed:)];
+	[button addGestureRecognizer:longPress];
+    
+	return button;
+}
+
+
+- (void)linkPushed:(DTLinkButton *)button
+{
+	NSURL *URL = button.URL;
+    
+	if ([[UIApplication sharedApplication] canOpenURL:[URL absoluteURL]])
+	{
+		[[UIApplication sharedApplication] openURL:[URL absoluteURL]];
+	}
+}
 
 
 @end

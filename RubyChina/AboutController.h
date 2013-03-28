@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <DTCoreText.h>
 
-@interface AboutController : UIViewController
+@interface AboutController : UIViewController< DTAttributedTextContentViewDelegate, DTLazyImageViewDelegate>
 
 @end

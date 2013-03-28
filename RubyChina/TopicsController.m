@@ -91,7 +91,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     
-    [self.tableView triggerPullToRefresh];
+    //[self.tableView triggerPullToRefresh];
 }
 
 - (void)viewDidLoad
@@ -139,12 +139,13 @@
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleHeight;
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
     self.tableView.separatorColor = [UIColor colorWithRed:211.0/255 green:211.0/255 blue:211.0/255 alpha:0.2];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(triggerPull:) name:@"createTopic" object:nil];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)triggerPull: (NSNotification *)notification
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.tableView triggerPullToRefresh];
 }
 
 - (void)selectNode: (UIBarButtonItem* )sender {
@@ -152,7 +153,14 @@
     controller.hidesBottomBarWhenPushed = YES;
     controller.newTopic = YES;
     controller.title = @"选择节点";
-//    [self.tabBarController presentViewController:controller animated:YES completion:^{}];
+    
+    UIButton *backButton = [[UIButton alloc] init];    
+    [backButton setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(back:)
+         forControlEvents:UIControlEventTouchUpInside];
+    [backButton setFrame:CGRectMake(0, 0, 49, 30)];
+    
+    controller.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton] ;
     [self.navigationController pushViewController:controller animated:YES];
 }
 
@@ -241,4 +249,8 @@ NSString * const CellIdentifier = @"Cell";
     
 }
 
+
+- (void)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

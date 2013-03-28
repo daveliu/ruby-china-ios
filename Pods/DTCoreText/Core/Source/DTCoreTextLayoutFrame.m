@@ -25,6 +25,8 @@ static BOOL _DTCoreTextLayoutFramesShouldDrawDebugFrames = NO;
 	
 	int _numberLinesFitInFrame;
 	DTCoreTextLayoutFrameTextBlockHandler _textBlockHandler;
+	
+	CGFloat _longestLayoutLineWidth;
 }
 
 @synthesize numberOfLines = _numberOfLines;
@@ -702,11 +704,15 @@ static BOOL _DTCoreTextLayoutFramesShouldDrawDebugFrames = NO;
 
 #pragma mark Drawing
 
-- (void)_setShadowInContext:(CGContextRef)context fromDictionary:(NSDictionary *)dictionary
+- (void)_setShadowInContext:(CGContextRef)context fromDictionary:(NSDictionary *)dictionary additionalOffset:(CGSize)additionalOffset
 {
 	DTColor *color = [dictionary objectForKey:@"Color"];
 	CGSize offset = [[dictionary objectForKey:@"Offset"] CGSizeValue];
 	CGFloat blur = [[dictionary objectForKey:@"Blur"] floatValue];
+	
+	// add extra offset
+	offset.width += additionalOffset.width;
+	offset.height += additionalOffset.height;
 	
 	CGFloat scaleFactor = 1.0;
 	if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)])
@@ -816,6 +822,71 @@ static BOOL _DTCoreTextLayoutFramesShouldDrawDebugFrames = NO;
 
 - (void)drawInContext:(CGContextRef)context drawImages:(BOOL)drawImages drawLinks:(BOOL)drawLinks
 {
+	DTCoreTextLayoutFrameDrawingOptions options = DTCoreTextLayoutFrameDrawingDefault;
+	
+	if (!drawImages)
+	{
+		options |= DTCoreTextLayoutFrameDrawingOmitAttachments;
+	}
+	
+	if (!drawLinks)
+	{
+		options |= DTCoreTextLayoutFrameDrawingOmitLinks;
+	}
+	
+	[self drawInContext:context options:options];
+}
+
+// sets the text foreground color based on the glyph run and drawing options
+- (void)_setForgroundColorInContext:(CGContextRef)context forGlyphRun:(DTCoreTextGlyphRun *)glyphRun options:(DTCoreTextLayoutFrameDrawingOptions)options
+{
+	id color = nil;
+	
+	BOOL needsToSetFillColor = [[glyphRun.attributes objectForKey:(id)kCTForegroundColorFromContextAttributeName] boolValue];
+	
+	if (glyphRun.isHyperlink)
+	{
+		if (options & DTCoreTextLayoutFrameDrawingDrawLinksHighlighted)
+		{
+			color = (id)[[glyphRun.attributes objectForKey:DTLinkHighlightColorAttribute] CGColor];
+		}
+	}
+	
+	if (!color)
+	{
+		// get text color or use black
+		color = [glyphRun.attributes objectForKey:(id)kCTForegroundColorAttributeName];
+		
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_5_1
+		if (!color && ___useiOS6Attributes)
+		{
+			DTColor *uiColor = [glyphRun.attributes objectForKey:NSForegroundColorAttributeName];
+			color = (id)uiColor.CGColor;
+		}
+#endif
+	}
+	
+	// default color
+	if (!color)
+	{
+		color = (id)[DTColor blackColor].CGColor;
+	}
+	
+	// set fill for text that uses kCTForegroundColorFromContextAttributeName
+	if (needsToSetFillColor)
+	{
+		CGContextSetFillColorWithColor(context, (__bridge CGColorRef)color);
+	}
+	
+	// set stroke for lines
+	CGContextSetStrokeColorWithColor(context, (__bridge CGColorRef)color);
+}
+
+- (void)drawInContext:(CGContextRef)context options:(DTCoreTextLayoutFrameDrawingOptions)options
+{
+	BOOL drawLinks = !(options & DTCoreTextLayoutFrameDrawingOmitLinks);
+	BOOL drawImages = !(options & DTCoreTextLayoutFrameDrawingOmitAttachments);
+	
 	CGRect rect = CGContextGetClipBoundingBox(context);
 	
 	if (!context)
@@ -965,17 +1036,6 @@ static BOOL _DTCoreTextLayoutFramesShouldDrawDebugFrames = NO;
 				continue;
 			}
 			
-			CGColorRef backgroundColor = (__bridge CGColorRef)[oneRun.attributes objectForKey:DTBackgroundColorAttribute];
-			
-			// can also be iOS 6 attribute
-#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_5_1
-			if (!backgroundColor && ___useiOS6Attributes)
-			{
-				UIColor *uiColor = [oneRun.attributes objectForKey:NSBackgroundColorAttributeName];
-				backgroundColor = uiColor.CGColor;
-			}
-#endif
-			
 			// don't draw decorations on images
 			if (oneRun.attachment)
 			{
@@ -988,78 +1048,9 @@ static BOOL _DTCoreTextLayoutFramesShouldDrawDebugFrames = NO;
 				continue;
 			}
 			
-			// -------------- Line-Out, Underline, Background-Color
-			BOOL drawStrikeOut = [[oneRun.attributes objectForKey:DTStrikeOutAttribute] boolValue];
-			BOOL drawUnderline = [[oneRun.attributes objectForKey:(id)kCTUnderlineStyleAttributeName] boolValue];
+			[self _setForgroundColorInContext:context forGlyphRun:oneRun options:options];
 			
-			if (drawStrikeOut||drawUnderline||backgroundColor)
-			{
-				// get text color or use black
-				id color = [oneRun.attributes objectForKey:(id)kCTForegroundColorAttributeName];
-				
-#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_5_1
-				if (!color && ___useiOS6Attributes)
-				{
-					UIColor *uiColor = [oneRun.attributes objectForKey:NSForegroundColorAttributeName];
-					color = (id)uiColor.CGColor;
-				}
-#endif
-				
-				if (color)
-				{
-					CGContextSetStrokeColorWithColor(context, (__bridge CGColorRef)color);
-				}
-				else
-				{
-					CGContextSetGrayStrokeColor(context, 0, 1.0);
-				}
-				
-				CGRect runStrokeBounds = oneRun.frame;
-				
-				NSInteger superscriptStyle = [[oneRun.attributes objectForKey:(id)kCTSuperscriptAttributeName] integerValue];
-				
-				switch (superscriptStyle) 
-				{
-					case 1:
-					{
-						runStrokeBounds.origin.y -= oneRun.ascent * 0.47f;
-						break;
-					}	
-					case -1:
-					{
-						runStrokeBounds.origin.y += oneRun.ascent * 0.25f;
-						break;
-					}	
-					default:
-						break;
-				}
-				
-				if (backgroundColor)
-				{
-					CGContextSetFillColorWithColor(context, backgroundColor);
-					CGContextFillRect(context, runStrokeBounds);
-				}
-				
-				if (drawStrikeOut)
-				{
-					CGFloat y = roundf(runStrokeBounds.origin.y + oneRun.frame.size.height/2.0f + 1)+0.5f;
-					
-					CGContextMoveToPoint(context, runStrokeBounds.origin.x, y);
-					CGContextAddLineToPoint(context, runStrokeBounds.origin.x + runStrokeBounds.size.width, y);
-					
-					CGContextStrokePath(context);
-				}
-				
-				if (drawUnderline)
-				{
-					CGFloat y = roundf(runStrokeBounds.origin.y + runStrokeBounds.size.height - oneRun.descent + 1)+0.5f;
-					
-					CGContextMoveToPoint(context, runStrokeBounds.origin.x, y);
-					CGContextAddLineToPoint(context, runStrokeBounds.origin.x + runStrokeBounds.size.width, y);
-					
-					CGContextStrokePath(context);
-				}
-			}
+			[oneRun drawDecorationInContext:context];
 		}
 	}
 	
@@ -1136,19 +1127,61 @@ static BOOL _DTCoreTextLayoutFramesShouldDrawDebugFrames = NO;
 				{
 					CGContextSaveGState(context);
 					
-					for (NSDictionary *shadowDict in shadows)
+					NSUInteger numShadows = [shadows count];
+					
+					if (numShadows == 1)
 					{
-						[self _setShadowInContext:context fromDictionary:shadowDict];
+						// single shadow, we only draw the glyph run with the shadow, no clipping magic
+						NSDictionary *singleShadow = [shadows objectAtIndex:0];
+						[self _setShadowInContext:context fromDictionary:singleShadow additionalOffset:CGSizeZero];
 						
-						// draw once per shadow
 						[oneRun drawInContext:context];
+					}
+					else // multiple shadows, we shift the text away and then draw a single glyph run over it
+					{
+						// get the run bounds, Core Text has bottom left 0,0 so we flip it
+						CGRect runBoundsFlipped = oneRun.frame;
+						runBoundsFlipped.origin.y = self.frame.size.height - runBoundsFlipped.origin.y - runBoundsFlipped.size.height;
+						
+						// assume that shadows would never be more than 100 pixels away from glyph run frame or outside of frame
+						CGRect clipRect = CGRectIntersection(CGRectInset(runBoundsFlipped, -100, -100), self.frame);
+						
+						// clip to the rect
+						CGContextAddRect(context, clipRect);
+						CGContextClipToRect(context, clipRect);
+						
+						// Move the text outside of the clip rect so that only the shadow is visisble
+						CGContextSetTextPosition(context, textPosition.x + clipRect.size.width, textPosition.y);
+						
+						// draw each shadow
+						[shadows enumerateObjectsUsingBlock:^(NSDictionary *shadowDict, NSUInteger idx, BOOL *stop) {
+							BOOL isLastShadow = (idx == (numShadows-1));
+							
+							if (isLastShadow)
+							{
+								// last shadow draws the original text
+								[self _setShadowInContext:context fromDictionary:shadowDict additionalOffset:CGSizeZero];
+								
+								// ... so we put text position back
+								CGContextSetTextPosition(context, textPosition.x, textPosition.y);
+							}
+							else
+							{
+								[self _setShadowInContext:context fromDictionary:shadowDict additionalOffset:CGSizeMake(-clipRect.size.width, 0)];
+							}
+							
+							[oneRun drawInContext:context];
+						}];
 					}
 					
 					CGContextRestoreGState(context);
 				}
-				
-				// regular text
-				[oneRun drawInContext:context];
+				else // no shadows
+				{
+					[self _setForgroundColorInContext:context forGlyphRun:oneRun options:options];
+
+					[oneRun drawInContext:context];
+				}
 			}
 		}
 	}
@@ -1285,6 +1318,41 @@ static BOOL _DTCoreTextLayoutFramesShouldDrawDebugFrames = NO;
 	}
 	
 	return _frame;
+}
+
+- (CGRect)intrinsicContentFrame
+{
+	if (!_lines)
+	{
+		[self _buildLines];
+	}
+	
+	if (![self.lines count])
+	{
+		return CGRectZero;
+	}
+	
+	DTCoreTextLayoutLine *firstLine = [_lines objectAtIndex:0];
+	
+	CGRect outerFrame = self.frame;
+	
+	CGRect frameOverAllLines = firstLine.frame;
+	
+	// move up to frame origin because first line usually does not go all the ways up
+	frameOverAllLines.origin.y = outerFrame.origin.y;
+	
+	for (DTCoreTextLayoutLine *oneLine in _lines)
+	{
+		// need to limit frame to outer frame, otherwise HR causes too long lines
+		CGRect frame = CGRectIntersection(oneLine.frame, outerFrame);
+		
+		frameOverAllLines = CGRectUnion(frame, frameOverAllLines);
+	}
+	
+	// extend height same method as frame
+	frameOverAllLines.size.height = ceilf(frameOverAllLines.size.height + 1.5f + _additionalPaddingAtBottom);
+	
+	return CGRectIntegral(frameOverAllLines);
 }
 
 - (DTCoreTextLayoutLine *)lineContainingIndex:(NSUInteger)index

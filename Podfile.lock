@@ -1,6 +1,6 @@
 
 PODS:
-- DTCoreText (1.3.2):
+- DTCoreText (HEAD based on 1.3.2):
   - DTFoundation/Core (~> 1.1)
   - DTFoundation/DTHMLParser (~> 1.0)
 - DTFoundation/Core (1.1.0)
@@ -26,7 +26,7 @@ PODS:
 - libextobjc/RuntimeExtensions (0.2.5)
 
 DEPENDENCIES:
-- DTCoreText
+- DTCoreText (HEAD)
 - GCPlaceholderTextView
 - HPGrowingTextView
 - MKNetworkKit
