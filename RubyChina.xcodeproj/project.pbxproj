@@ -519,10 +519,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E05BFD7A92F4A9F81E45CDC /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yazhou Wang (2G4F9ZE89Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yazhou Wang (2G4F9ZE89Z)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RubyChina/RubyChina-Prefix.pch";
 				INFOPLIST_FILE = "RubyChina/RubyChina-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "FD15D3EC-795D-4DCE-A74E-EF211539262B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FD15D3EC-795D-4DCE-A74E-EF211539262B";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -532,10 +536,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E05BFD7A92F4A9F81E45CDC /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RubyChina/RubyChina-Prefix.pch";
 				INFOPLIST_FILE = "RubyChina/RubyChina-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};

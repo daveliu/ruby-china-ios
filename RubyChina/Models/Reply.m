@@ -12,7 +12,7 @@
 #import "Topic.h"
 
 @implementation Reply
-@synthesize user, topicId, body, bodyHtml;
+@synthesize user, topicId, body, bodyHtml, creatorAvatar, creatorLogin;
 
 
 +(Reply *) initWithDictionary:(NSDictionary *)obj{

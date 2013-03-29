@@ -37,7 +37,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.title = @"发帖";
+//    self.title = @"发帖";
     
     
     //text view
@@ -79,7 +79,9 @@
     [currentOp onCompletion:^(MKNetworkOperation* completedRequest) {
         DLog(@"-------------------------%@", completedRequest);
         [self.navigationController popToRootViewControllerAnimated:YES];
+        [SVProgressHUD showSuccessWithStatus:@"发表成功"];
 
+        
         [[NSNotificationCenter defaultCenter] postNotificationName:@"createTopic" object:nil];
         
         

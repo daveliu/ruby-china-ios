@@ -176,16 +176,20 @@
         DLog(@"-------------------------%@", completedRequest);
 
         Reply *reply = [Reply initWithDictionary:[NSDictionary dictionaryWithObjectsAndKeys:
-                         textView.text, @"bodyHtml",
+                         textView.text, @"body_html",
                         nil]];
         reply.creatorLogin = [Preferences login] ;
         reply.creatorAvatar = [Preferences avatarUrl] ;
+        reply.createdAt = [NSDate date];
         
         NSMutableArray *dataCopy = [self.replies mutableCopy];
         [dataCopy addObject:reply];
         self.replies = [NSArray arrayWithArray:dataCopy];
         
-        [textView resignFirstResponder];        
+        [textView resignFirstResponder];
+        textView.text = @"";
+        [SVProgressHUD showSuccessWithStatus:@"回复成功"];
+        [self.tableView scrollRectToVisible:CGRectMake(0, self.tableView.contentSize.height - self.tableView.frame.size.height, 1, 1) animated:YES];
         
     } onError:^(NSError* error) {
         [SVProgressHUD showErrorWithStatus:@"网络不给力啊"];
