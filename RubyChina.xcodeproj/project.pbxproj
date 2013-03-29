@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5515984017048E0400518CC6 /* avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5515983F17048E0400518CC6 /* avatar@2x.png */; };
+		5515984217054AC500518CC6 /* ruby-china-logo-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5515984117054AC500518CC6 /* ruby-china-logo-2.png */; };
+		5515984417054B3100518CC6 /* ruby-china-logo-2-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 5515984317054B3100518CC6 /* ruby-china-logo-2-small.png */; };
+		5515984617054B3D00518CC6 /* ruby-china-logo-2-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 5515984517054B3C00518CC6 /* ruby-china-logo-2-small.png */; };
+		5515984817054B4100518CC6 /* ruby-china-logo-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5515984717054B4100518CC6 /* ruby-china-logo-2.png */; };
 		552DFCCD16FC812500B5F49F /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFCCC16FC812500B5F49F /* background@2x.png */; };
 		552DFCCF16FC820A00B5F49F /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFCCE16FC820A00B5F49F /* button@2x.png */; };
 		552DFCD116FC9CDB00B5F49F /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 552DFCD016FC9CDB00B5F49F /* logo@2x.png */; };
@@ -65,6 +69,10 @@
 		1F51D527298F4DBA89882A6B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E05BFD7A92F4A9F81E45CDC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		5515983F17048E0400518CC6 /* avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "avatar@2x.png"; path = "Resources/avatar@2x.png"; sourceTree = "<group>"; };
+		5515984117054AC500518CC6 /* ruby-china-logo-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ruby-china-logo-2.png"; path = "Resources/ruby-china-logo-2.png"; sourceTree = "<group>"; };
+		5515984317054B3100518CC6 /* ruby-china-logo-2-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ruby-china-logo-2-small.png"; path = "Resources/ruby-china-logo-2-small.png"; sourceTree = "<group>"; };
+		5515984517054B3C00518CC6 /* ruby-china-logo-2-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ruby-china-logo-2-small.png"; sourceTree = "<group>"; };
+		5515984717054B4100518CC6 /* ruby-china-logo-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ruby-china-logo-2.png"; sourceTree = "<group>"; };
 		552DFCCC16FC812500B5F49F /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background@2x.png"; path = "Resources/background@2x.png"; sourceTree = "<group>"; };
 		552DFCCE16FC820A00B5F49F /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button@2x.png"; path = "Resources/button@2x.png"; sourceTree = "<group>"; };
 		552DFCD016FC9CDB00B5F49F /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo@2x.png"; path = "Resources/logo@2x.png"; sourceTree = "<group>"; };
@@ -157,6 +165,8 @@
 		55D49D6B16FB15E2006DA6D2 = {
 			isa = PBXGroup;
 			children = (
+				5515984717054B4100518CC6 /* ruby-china-logo-2.png */,
+				5515984517054B3C00518CC6 /* ruby-china-logo-2-small.png */,
 				55D49D7D16FB15E2006DA6D2 /* RubyChina */,
 				55D49D7616FB15E2006DA6D2 /* Frameworks */,
 				55D49D7516FB15E2006DA6D2 /* Products */,
@@ -271,6 +281,8 @@
 		55D49DB316FC60F6006DA6D2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5515984317054B3100518CC6 /* ruby-china-logo-2-small.png */,
+				5515984117054AC500518CC6 /* ruby-china-logo-2.png */,
 				5515983F17048E0400518CC6 /* avatar@2x.png */,
 				552DFD5D17044CC800B5F49F /* navbutton@2x.png */,
 				552DFD5B170449F500B5F49F /* tab3@2x.png */,
@@ -379,6 +391,10 @@
 				552DFD5C170449F500B5F49F /* tab3@2x.png in Resources */,
 				552DFD5E17044CC900B5F49F /* navbutton@2x.png in Resources */,
 				5515984017048E0400518CC6 /* avatar@2x.png in Resources */,
+				5515984217054AC500518CC6 /* ruby-china-logo-2.png in Resources */,
+				5515984417054B3100518CC6 /* ruby-china-logo-2-small.png in Resources */,
+				5515984617054B3D00518CC6 /* ruby-china-logo-2-small.png in Resources */,
+				5515984817054B4100518CC6 /* ruby-china-logo-2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
