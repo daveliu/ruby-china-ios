@@ -72,19 +72,8 @@
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton] ;
     
-    
-//    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resignTextView:)];
-//    [tap setDelegate:self];
-//    [self.view addGestureRecognizer:tap];
-    
-    UIPanGestureRecognizer * swip = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(resignTextViewSwip:)];
-//     [swip setDirection:UISwipeGestureRecognizerDirectionDown];
-    [swip setDelegate:self];
-  //  [swip setNumberOfTouchesRequired:1];
-    swip.cancelsTouchesInView = NO;
-    [self.view addGestureRecognizer:swip];
-
-
+    UISwipeGestureRecognizer *swipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
+    [self.view addGestureRecognizer:swipeGestureRecognizer];
 }
 
 
@@ -600,6 +589,11 @@ NSString * const AttributedTextTopicCellReuseIdentifier = @"AttributedTextTopicC
 	{
 		[[UIApplication sharedApplication] openURL:[URL absoluteURL]];
 	}
+}
+
+- (void)swipe:(id)swipeGestureRecognizer
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

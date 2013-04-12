@@ -168,13 +168,18 @@ NSString * const TopicCellIdentifier = @"TopicCell";
         UILabel *bioLabel = [[UILabel alloc] init];
         bioLabel.font = [UIFont systemFontOfSize:16.0];
         bioLabel.textColor = [UIColor blackColor];
-        bioLabel.backgroundColor = [UIColor clearColor];        
-        bioLabel.text = self.user.bio;
+        bioLabel.backgroundColor = [UIColor clearColor];
+        if (self.user.bio != (id)[NSNull null]) {
+            bioLabel.text = self.user.bio;
+        }
 
         CGSize constraint = CGSizeMake(320 - 2 * 10, 20000.0f);
         
         CGFloat height = 0;
-        CGSize size = [self.user.bio sizeWithFont:[UIFont systemFontOfSize:16.0] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+        CGSize size = CGSizeZero;
+        if (self.user.bio != (id)[NSNull null]) {
+            size = [self.user.bio sizeWithFont:[UIFont systemFontOfSize:16.0] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+        }
         height = size.height;
         bioLabel.frame = CGRectMake(10, 100, 300, height);
         
@@ -219,7 +224,10 @@ NSString * const TopicCellIdentifier = @"TopicCell";
     if (indexPath.section == 0) {        
         CGSize constraint = CGSizeMake(320 - 2 * 10, 20000.0f);
         
-        CGSize size = [self.user.bio sizeWithFont:[UIFont systemFontOfSize:16.0] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+        CGSize size = CGSizeZero;
+        if (self.user.bio != (id)[NSNull null]) {
+            size = [self.user.bio sizeWithFont:[UIFont systemFontOfSize:16.0] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+        }
         height = size.height + 120.0f;
     }else{
         CGFloat backgroundViewWidth = CELL_WIDTH - 3 * CELL_PADDING - HEADSHOT_WIDTH;

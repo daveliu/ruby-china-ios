@@ -60,6 +60,8 @@
     navController3.tabBarItem.image = [UIImage imageNamed:@"tab4.png"];
     
     self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController.tabBar.backgroundImage = [UIImage imageNamed:@"navbar"];
+    self.tabBarController.tabBar.selectedImageTintColor = [UIColor lightGrayColor];
     self.tabBarController.viewControllers = @[navController0, navController1, navController2, navController3];
     self.window.rootViewController = self.tabBarController;
     
