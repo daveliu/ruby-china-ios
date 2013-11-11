@@ -4,6 +4,6 @@ pod 'SDWebImage'
 pod 'SVProgressHUD'
 pod 'SVPullToRefresh'
 pod 'Mantle'
-pod 'DTCoreText', :head
+pod 'DTCoreText'
 pod 'HPGrowingTextView'
 pod 'GCPlaceholderTextView'
