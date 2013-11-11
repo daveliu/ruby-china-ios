@@ -28,6 +28,10 @@ static User *_currentUser;
     user.githubUrl = [obj objectForKey:@"github_url"];
     user.bio = [obj objectForKey:@"bio"];
     
+    if ([user.bio isKindOfClass:[NSNull class]]) {
+        user.bio = @"";
+    }
+    
     return user;
 }
 
